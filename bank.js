@@ -31,8 +31,8 @@ Bank.prototype = {
     return bank.totalCash() / this.accounts.length;
   },
 
-  totalByType: function(){
-   var result =  _.filter(bank.accounts, { "type": "business" });
+  totalByType: function(type){
+   var result =  _.filter(bank.accounts, { "type": type });
    return _.sumBy(result, 'money');
   }
 
@@ -41,27 +41,3 @@ Bank.prototype = {
 
 module.exports = Bank;
 
-
-
-
-
-
-
-
-
-
-
-// setTotal: function() {
-//   this.total = 0;
-//   this.accounts.forEach( function(account) {
-//     this.total += account.money;
-//   }.bind( this ))
-// },
-
-
-
-// findAverage: function(){
-//   console.log(this.total);
-
-//   return this.total / this.accounts.length;
-// }

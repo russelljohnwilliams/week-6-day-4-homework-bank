@@ -63,7 +63,15 @@ describe( "Bank", function() {
     bank.addAccount(jessie);
     bank.addAccount(elliot);
     bank.addAccount(edie);
-    assert.equal(900, bank.totalByType())
+    assert.equal(900, bank.totalByType("business"))
+  })
+
+  it ("found total of personal accounts", function(){
+    bank.addAccount(frank);
+    bank.addAccount(jessie);
+    bank.addAccount(elliot);
+    bank.addAccount(edie);
+    assert.equal(1050, bank.totalByType("personal"))
   })
 
 
