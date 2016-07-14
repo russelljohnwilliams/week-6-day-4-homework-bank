@@ -58,5 +58,13 @@ describe( "Bank", function() {
     assert.equal( 487.5, bank.findAverage())
   })
 
+  it ("found total of business accounts", function(){
+    bank.addAccount(frank);
+    bank.addAccount(jessie);
+    bank.addAccount(elliot);
+    bank.addAccount(edie);
+    assert.equal(900, bank.totalByType())
+  })
+
 
 })

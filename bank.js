@@ -18,17 +18,22 @@ Bank.prototype = {
   },
 
   mostMoney: function(){
-    accounts = _.sortBy(this.accounts, ['money']).reverse();
+    var accounts = _.sortBy(this.accounts, ['money']).reverse();
     return accounts[0];
   },
 
   totalCash: function(){
-    total = _.sumBy(this.accounts, 'money');
+    var total = _.sumBy(this.accounts, 'money');
     return total
   },
 
   findAverage: function(){
     return bank.totalCash() / this.accounts.length;
+  },
+
+  totalByType: function(){
+   var result =  _.filter(bank.accounts, { "type": "business" });
+   return _.sumBy(result, 'money');
   }
 
 }
