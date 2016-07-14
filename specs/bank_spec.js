@@ -28,5 +28,35 @@ describe( "Bank", function() {
     assert.equal(1, bank.accounts.length)
   })
 
+  it ("Found bank account by name",function() {
+    bank.addAccount(edie)
+    assert.deepEqual(edie, bank.findAccount("Edie"))
+  })
+
+  it ("Found account with most money", function() {
+    bank.addAccount(jessie);
+    bank.addAccount(elliot);
+    bank.addAccount(edie);
+    bank.addAccount(frank);
+    assert.equal(edie, bank.mostMoney(1000))
+  })
+
+  it ("find total cash in all accounts", function() {
+    bank.addAccount(frank);
+    bank.addAccount(jessie);
+    bank.addAccount(elliot);
+    bank.addAccount(edie);
+    assert.equal(1950, bank.totalCash())
+  })
+
+  it ("found average of all acounts", function(){
+    bank.addAccount(frank);
+    bank.addAccount(jessie);
+    bank.addAccount(elliot);
+    bank.addAccount(edie);
+    bank.totalCash();
+    assert.equal( 487.5, bank.findAverage())
+  })
+
 
 })
